@@ -75,10 +75,12 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'hostname' => 'localhost',
+//	'username' => 'navyte_user',
+//	'database' => 'navyte_welding',
+	'username' => 'root',
+	'password' => 'malast',
+	'database' => 'navyte_welding',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
