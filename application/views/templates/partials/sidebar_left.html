@@ -1,0 +1,236 @@
+<aside id="sidebar-left" class="sidebar-circle">
+
+<!-- Start left navigation - profile shortcut -->
+<div class="sidebar-content">
+    <div class="media">
+        <!--<a class="pull-left has-notif avatar" href="page-profile.html">-->
+            <!--<img src="http://img.djavaui.com/?create=50x50,4888E1?f=ffffff" alt="admin">-->
+            <!--<i class="online"></i>-->
+        <!--</a>-->
+        <div class="media-body">
+            <h4 class="media-heading">Hello, <span>{$user_name}</span></h4>
+            <small>{$user_role}</small>
+        </div>
+    </div>
+</div><!-- /.sidebar-content -->
+<!--/ End left navigation -  profile shortcut -->
+
+<!-- Start left navigation - menu -->
+<ul class="sidebar-menu">
+
+<!-- Start navigation - dashboard -->
+    {if in_array('dashboard/index',$pages) }
+
+    <li class="{if isset($active_dashboard)} {$active_dashboard} {/if}">
+<a href="{base_url('dashboard')}">
+    <span class="icon"><i class="fa fa-home"></i></span>
+    <span class="text">Dashboard</span>
+    {if isset($active_dashboard)} {'<span class="selected"></span>'} {/if}
+</a>
+</li>
+    {/if}
+<!--/ End navigation - dashboard -->
+
+<!-- Start category apps -->
+
+
+<!-- Start navigation - pages -->
+<!--/ End navigation - pages -->
+
+    {if in_array('user/index',$pages) || in_array('user/user_roles',$pages) || in_array('user/user_roles_access',$pages)}
+
+
+    <li class="submenu {if isset($active_user)} {$active_user} {/if}">
+        <a href="javascript:void(0);">
+            <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+            <span class="text">Users</span>
+            <span class="arrow"></span>
+            {if isset($active_user)} {'<span class="selected"></span>'} {/if}
+        </a>
+        <ul>
+            {if in_array('user/index',$pages)}
+            <li class="{if isset($user_list)} {$user_list} {/if}"><a href="{base_url('user')}">User List  </a></li>
+            {/if}
+            {if in_array('user/add',$pages)}
+            <li class="{if isset($add_user)} {$add_user} {/if}"><a href="{base_url('user/add')}">Add User  </a></li>
+            {/if}
+            {if in_array('user/user_roles',$pages)}
+            <li class="{if isset($active_user_roles)} {$active_user_roles} {/if}"><a href="{base_url('user/user_roles')}">User Roles  </a></li>
+            {/if}
+            {if in_array('user/user_roles_access',$pages)}
+            <li class="{if isset($user_roles_access)} {$user_roles_access} {/if}"><a href="{base_url('user/user_roles_access')}">User Roles Access </a></li>
+            {/if}
+        </ul>
+
+    </li>
+    {/if}
+
+    <!--{if  in_array('form/form_management',$pages) }-->
+
+    <!--<li class="submenu {if isset($active_forms)} {$active_forms} {/if}">-->
+        <!--<a href="{base_url('form/form_management')}">-->
+            <!--<span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>-->
+            <!--<span class="text">Forms</span>-->
+            <!--&lt;!&ndash;<span class="arrow"></span>&ndash;&gt;-->
+            <!--{if isset($active_forms)} {'<span class="selected"></span>'} {/if}-->
+        <!--</a>-->
+        <!--<ul>-->
+            <!--&lt;!&ndash;{if $group_id == '1'  || $group_id == '4' || $group_id == '6'}&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<li class="{if isset($active_gallery)} {$active_gallery} {/if}"><a href="{base_url('welder/welder_list')}">Welder List </a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;{/if}&ndash;&gt;-->
+            <!--&lt;!&ndash;{if in_array('form/add_form',$pages) }&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<li class="{if isset($active_gallery)} {$active_gallery} {/if}"><a href="{base_url('form/add_form')}">Add form</a></li>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;{/if}&ndash;&gt;-->
+            <!--&lt;!&ndash;{if in_array('form/formlist',$pages) }&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<li class="{if isset($active_gallery)} {$active_gallery} {/if}"><a href="{base_url('form/formlist')}">Form List</a></li>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;{/if}&ndash;&gt;-->
+
+
+            <!--&lt;!&ndash;{if in_array('form/form_184',$pages)}&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="{if isset($active_gallery)} {$active_gallery} {/if}"><a href="{base_url('form/form_184')}">Form 184</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;{/if}&ndash;&gt;-->
+            <!--&lt;!&ndash;{if in_array('form/form_107',$pages)}&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="{if isset($active_gallery)} {$active_gallery} {/if}"><a href="{base_url('form/form_107')}">Form 107</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;{/if}&ndash;&gt;-->
+            <!--&lt;!&ndash;{if in_array('form/pqr',$pages)}&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="{if isset($active_gallery)} {$active_gallery} {/if}"><a href="{base_url('form/pqr')}">PQR</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;{/if}&ndash;&gt;-->
+            <!--&lt;!&ndash;{if in_array('form/wps',$pages)}&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="{if isset($active_gallery)} {$active_gallery} {/if}"><a href="{base_url('form/wps')}">WPS</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;{/if}&ndash;&gt;-->
+
+            <!--&lt;!&ndash;{foreach $forms as $form}&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="{if isset($active_gallery)} {$active_gallery} {/if}"><a href="{base_url('form/form')}/{$form->slug}">{$form->name}</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;{/foreach}&ndash;&gt;-->
+
+        <!--</ul>-->
+
+    <!--</li>-->
+
+    <!--{/if}-->
+    {if ($w_form!=null)}
+
+    <li class="submenu {if isset($active_welding)} {$active_welding} {/if}">
+        <a href="javascript:void(0);">
+            <span class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+            <span class="text">Forms</span>
+            <span class="arrow"></span>
+            {if isset($active_forms)} {'<span class="selected"></span>'} {/if}
+        </a>
+        <ul>
+            {foreach from=$w_form item=row }
+            <li class="{if isset($form_slug) && ($form_slug == $row->id)} {'active'} {/if}"><a href="{base_url('welding/access_form')}/{$row->id}"> {$row->form_title}  </a></li>
+            {/foreach}
+
+        </ul>
+
+    </li>
+
+    {/if}
+
+    {if in_array('welding/welder_list',$pages) || in_array('welding/process',$pages) || in_array('welding/vision_test_reports',$pages) || in_array('welding/vision_consent_reports',$pages) }
+
+
+    <li class="submenu {if isset($active_welding)} {$active_welding} {/if}">
+        <a href="javascript:void(0);">
+            <span class="icon"><i class="fa fa-file-o"></i></span>
+            <span class="text">Welding </span>
+            <span class="arrow"></span>
+            {if isset($active_welding)} {'<span class="selected"></span>'} {/if}
+        </a>
+        <ul>
+
+
+            {if in_array('welding/welder_list',$pages) }
+
+            <li class="{if isset($welder_list)} {$welder_list} {/if}"><a href="{base_url('welding/welder_list')}">Welder List</a></li>
+
+            {/if}
+            <!--{if in_array('welding/process',$pages) }-->
+
+            <!--<li class="{if isset($active_gallery)} {$active_gallery} {/if}"><a href="{base_url('welding/process')}">Process List</a></li>-->
+            <!--{/if}-->
+
+            {if in_array('welding/vision_test_reports',$pages) }
+
+            <li class="{if isset($vision_test_reports)} {$vision_test_reports} {/if}"><a href="{base_url('welding/vision_test_reports')}">Vision Test Reports</a></li>
+            {/if}
+
+            {if in_array('welding/vision_consent_reports',$pages) }
+            <li class="{if isset($vision_consent_reports)} {$vision_consent_reports} {/if}"><a href="{base_url('welding/vision_consent_reports')}">Vision Consent Reports</a></li>
+            {/if}
+        </ul>
+    </li>
+    {/if}
+    <!--{if  in_array('form/form_management',$pages) }-->
+    {if in_array('welding/welder_list',$pages) || in_array('welding/process',$pages) || in_array('welding/vision_test_reports',$pages) || in_array('welding/vision_consent_reports',$pages) }
+
+
+    <li class="submenu {if isset($active_parameters)} {$active_parameters} {/if}">
+        <a href="javascript:void(0);">
+            <span class="icon"><i class="fa fa-file-o"></i></span>
+            <span class="text">Parameters</span>
+            <span class="arrow"></span>
+            {if isset($active_parameters)} {'<span class="selected"></span>'} {/if}
+        </a>
+        <ul>
+
+
+            {if in_array('welding/welder_list',$pages) }
+
+            <li class="{if isset($active_base_materials)} {$active_base_materials} {/if}"><a href="{base_url('parameters/base_materials')}">Base Materials</a></li>
+
+            {/if}
+            <!--{if in_array('welding/process',$pages) }-->
+
+            <li class="{if isset($active_process)} {$active_process} {/if}"><a href="{base_url('parameters/process')}">Process List</a></li>
+            <!--{/if}-->
+
+            <li class="{if isset($active_shielding)} {$active_shielding} {/if}"><a href="{base_url('parameters/shielding_gas')}">Shielding Gas</a></li>
+            <li class="{if isset($active_test_assemblies)} {$active_test_assemblies} {/if}"><a href="{base_url('parameters/test_assemblies')}">Test Assemblies & joint Design</a></li>
+            <li class="{if isset($active_qualified_filler_groups)} {$active_qualified_filler_groups} {/if}"><a href="{base_url('parameters/qualified_filler_groups')}">Qualified Filler Groups</a></li>
+
+            <li class="{if isset($active_filler_material_diameter)} {$active_filler_material_diameter} {/if}"><a href="{base_url('parameters/filler_material_diameter')}">Filler Material Diameter</a></li>
+            <li class="{if isset($active_add_filler_material_grouping)} {$active_add_filler_material_grouping} {/if}"><a href="{base_url('parameters/filler_material_grouping')}">Filler Material Grouping</a></li>
+
+            <li class="{if isset($active_pipe_size)} {$active_pipe_size} {/if}"><a href="{base_url('parameters/pipe_size')}">Pipe Size</a></li>
+
+            <li class="{if isset($active_copper_nickel_tubing)} {$active_copper_nickel_tubing} {/if}"><a href="{base_url('parameters/copper_nickel_tubing')}">Copper Nickel Tubeing</a></li>
+
+        </ul>
+    </li>
+    {/if}
+    <!--<li class="submenu {if isset($active_pages)} {$active_pages} {/if}">-->
+        <!--<a href="{base_url('formbuilder/forms/list_uiforms')}">-->
+            <!--<span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i></span>-->
+            <!--<span class="text">Formbuilder</span>-->
+            <!--&lt;!&ndash;<span class="arrow"></span>&ndash;&gt;-->
+            <!--{if isset($active_pages)} {'<span class="selected"></span>'} {/if}-->
+        <!--</a>-->
+        <!--<ul>-->
+
+        <!--</ul>-->
+    <!--</li>-->
+    <!--{/if}-->
+
+    <!--/ End widget - weather -->
+
+<!-- Start widget - misc -->
+
+
+
+<!--/ End documentation - api documentation -->
+
+</ul><!-- /.sidebar-menu -->
+<!--/ End left navigation - menu -->
+
+<!-- Start left navigation - footer -->
+
+<!--/ End left navigation - footer -->
+
+</aside><!-- /#sidebar-left -->
